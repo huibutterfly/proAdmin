@@ -14,7 +14,8 @@ import {
   RadioGroup,
   Submenu,
   Tooltip,
-  Drawer
+  Drawer,
+  Tabs
 } from 'element-ui'
 
 Vue.use(Col)
@@ -32,3 +33,4 @@ Vue.use(RadioGroup)
 Vue.use(Submenu)
 Vue.use(Tooltip)
 Vue.use(Drawer)
+Vue.use(Tabs)

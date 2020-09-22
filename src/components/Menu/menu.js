@@ -20,7 +20,11 @@ export default {
   mounted() {
     this.setMenu()
   },
-  watch: {},
+  watch: {
+    $route: function () {
+      this.setMenu()
+    }
+  },
   methods: {
     setMenu() {
       const routes = this.$route.matched.concat()

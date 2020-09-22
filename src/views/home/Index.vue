@@ -9,7 +9,7 @@ export default {
     return {};
   },
   created() {
-    console.log(this.$route.length);
+    console.log('aaaaaaaaaaaaaaaa');
   },
   methods: {}
 };

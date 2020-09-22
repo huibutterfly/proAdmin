@@ -4,9 +4,8 @@
       这是一个次布局哈哈哈哈哈
     </div>
 
-    <!-- <keep-alive v-if="multiTab">
+    <keep-alive>
       <router-view ref="content" />
-    </keep-alive> -->
-    <router-view ref="content" />
+    </keep-alive>
   </div>
 </template>

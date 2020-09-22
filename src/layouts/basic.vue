@@ -7,7 +7,12 @@
 
     <div class="contentItem" :style="{ paddingLeft: contentPaddingLeft}">
       <MenuHeader @toggle="setCollapsed"></MenuHeader>
-      <router-view />
+      <div class="content">
+        <menu-tab v-if="multiTab"></menu-tab>
+      </div>
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -28,7 +33,8 @@ export default {
   data() {
     return {
       menus: [],
-      collapsed: false
+      collapsed: false,
+      multiTab: true
     };
   },
   computed: {
@@ -40,16 +46,14 @@ export default {
         return "0";
       }
       if (this.collapsed) {
-        return "200px";
+        return "64px";
       }
-      return "64px";
+      return "200px";
     }
   },
   watch: {
     sidebarOpened (val) {
       this.collapsed = !val
-      console.log('1111111111111')
-      console.log(this.collapsed)
     }
   },
   created() {
@@ -76,6 +80,7 @@ export default {
     width: 100%;
     padding-left: 200px;
     min-height: 100vh;
+    padding-top: 68px;
   }
 }
 </style>

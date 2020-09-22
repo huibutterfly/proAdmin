@@ -12,11 +12,13 @@ import {
 import './permission'
 import './element'
 import './global.less'
+import menuTab from '@/components/menuTab'
 
 Vue.config.productionTip = false
 Vue.prototype.$request = request
 
 Vue.use(VueAxios)
+Vue.use(menuTab)
 Vue.use(VueStorage, defaultSettings.storageOptions)
 
 new Vue({
