@@ -81,6 +81,7 @@ export default {
     padding-left: 200px;
     min-height: 100vh;
     padding-top: 68px;
+    box-sizing: border-box;
   }
 }
 </style>

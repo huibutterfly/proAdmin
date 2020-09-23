@@ -23,26 +23,18 @@ export const asyncRouterMap = [{
         }
       },
       {
-        path: '/pageOne',
-        name: 'pageOne',
+        path: '/purchase',
+        name: 'purchase',
         component: view,
-        hidden: false,
-        meta: {
-          title: '第一页',
-          icon: 'home',
-          permission: 'dashboard_index'
-        },
-        children: [{
-          path: '/pageOne/one',
-          name: 'pageOne_one',
-          component: () => import('@/views/pageOne/one'),
-          meta: {
-            title: '第一页_01',
-            keepAlive: false,
-            hiddenHeaderContent: true,
-            permission: 'dashboard_index'
+        meta: { title: '采购管理', keepAlive: true, icon: 'bxAnaalyse', permission: 'purchase' },
+        children: [
+          {
+            path: '/purchase/supplier',
+            name: 'purchase_supplierDetail',
+            component: () => import('@/views/purchase/supplier/Supplier'),
+            meta: { title: '供应商档案', keepAlive: false, hiddenHeaderContent: true, permission: 'purchase_supplierDetail' }
           }
-        }]
+        ]
       }
     ]
   },

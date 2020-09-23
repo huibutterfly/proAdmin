@@ -10,12 +10,17 @@ import {
 } from './utils/request'
 
 import './permission'
-import './element'
+import './core/user'
 import './global.less'
+import { Loading } from 'element-ui'
 import menuTab from '@/components/menuTab'
 
 Vue.config.productionTip = false
 Vue.prototype.$request = request
+Vue.use(Loading.directive);
+Vue.prototype.$loading = Loading.service;
+
+
 
 Vue.use(VueAxios)
 Vue.use(menuTab)

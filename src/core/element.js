@@ -15,7 +15,11 @@ import {
   Submenu,
   Tooltip,
   Drawer,
-  Tabs
+  Tabs,
+  Card,
+  Table,
+  TableColumn,
+  Pagination
 } from 'element-ui'
 
 Vue.use(Col)
@@ -34,3 +38,7 @@ Vue.use(Submenu)
 Vue.use(Tooltip)
 Vue.use(Drawer)
 Vue.use(Tabs)
+Vue.use(Card)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Pagination)
