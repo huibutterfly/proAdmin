@@ -42,7 +42,7 @@
         :page-sizes="[20, 50, 100, 500, 1000]"
         :page-size="pageSize"
         layout="total, sizes, prev, pager, next, jumper"
-        :total="400">
+        :total="total">
       </el-pagination>
     </el-card>
   </div>
@@ -60,12 +60,19 @@ export default {
       data: [],
       currentPage: 1,
       pageSize: 20,
+      total: 0,
     }
   },
   created(){
     this.getSupplier()
   },
   methods:{
+    handleSizeChange(){
+
+    },
+    handleCurrentChange(){
+
+    },
     onSearch () {
       this.getSupplier()
     },
@@ -80,6 +87,7 @@ export default {
             pages: `${this.currentPage}:${this.pageSize}`
           }
         })
+        this.total = res.count
         this.data = res.data.map(item => ({
           ...item,
           key: item.id,

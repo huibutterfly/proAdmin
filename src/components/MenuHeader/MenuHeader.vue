@@ -12,7 +12,7 @@
         <i
           :class="[
             'menuIcon',
-            collapsed ? 'el-icon-s-fold' : 'el-icon-s-unfold'
+            sidebarOpened ? 'el-icon-s-fold' : 'el-icon-s-unfold'
           ]"
           @click="toggle"
         ></i>
