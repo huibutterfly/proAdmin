@@ -62,9 +62,7 @@ export default {
     ...mapActions(["Login"]),
     submitForm(formName) {
       const { Login } = this;
-      console.log(this)
       this.$refs[formName].validate(valid => {
-        console.log(this)
         if (valid) {
           const posData = Object.assign({}, this.ruleForm);
           posData.password = md5(posData.password);

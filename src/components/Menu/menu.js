@@ -9,7 +9,11 @@ export default {
     menu: {
       type: Array,
       required: true
-    }
+    },
+    collapsible: {
+      type: Boolean,
+      required: true
+    },
   },
   data() {
     return {
@@ -91,7 +95,7 @@ export default {
     }
     return (
       <ElMenu
-        {...{on: on}} collapse={!this.sidebarOpened}
+        {...{on: on}} collapse={this.collapsible && !this.sidebarOpened}
         class="el-menu-vertical"
         default-active={this.selectedKeys}
         background-color="#001529"

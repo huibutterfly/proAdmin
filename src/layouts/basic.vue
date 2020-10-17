@@ -1,9 +1,9 @@
 <template>
   <div class="baseLayoutContainer">
     <el-drawer v-if="isMobile()" :visible.sync="collapsed" :with-header="false" direction="ltr">
-      <SideMenu :menus="menus" :collapsed="false" :collapsible="true"></SideMenu>
+      <SideMenu :menus="menus" :collapsible="false"></SideMenu>
     </el-drawer>
-    <SideMenu :menus="menus" :collapsed="collapsed" :collapsible="true" v-else></SideMenu>
+    <SideMenu :menus="menus" :collapsible="true" v-else></SideMenu>
 
     <div class="contentItem" :style="{ paddingLeft: contentPaddingLeft}">
       <MenuHeader @toggle="setCollapsed"></MenuHeader>

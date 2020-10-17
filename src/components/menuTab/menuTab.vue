@@ -23,8 +23,8 @@ export default {
       this.activeKey = this.fullPathList[this.fullPathList.length - 1]
     },
     removeTab(targetName) {
-      let tabs = this.editableTabs;
-      let activeName = this.editableTabsValue;
+      let tabs = this.pages;
+      let activeName = this.activeKey;
       if (activeName === targetName) {
         tabs.forEach((tab, index) => {
           if (tab.name === targetName) {
@@ -35,8 +35,9 @@ export default {
           }
         });
       }
-      this.editableTabsValue = activeName;
-      this.editableTabs = tabs.filter(tab => tab.name !== targetName);
+      this.activeKey = activeName;
+      this.pages = tabs.filter(tab => tab.fullPath !== targetName);
+      this.fullPathList = tabs.filter(tab => tab !== targetName);
     }
   },
   watch: {
@@ -52,7 +53,10 @@ export default {
     }
   },
   render() {
-    const { removeTab, $data: { pages } } = this
+    const { $data: { pages } } = this
+    const on = {
+      'tab-remove': this.removeTab
+    }
     const panes = pages.map(page => {
       return (
         <ELTabPane key={page.fullPath} label={page.meta.title} name={page.fullPath}></ELTabPane>
@@ -60,7 +64,7 @@ export default {
     })
     return(
       <div class="menuTab">
-        <ElTabs type='card' closable v-model={this.activeKey} tab-remove={removeTab}>
+        <ElTabs type='card' closable v-model={this.activeKey} {...{on: on}}>
           {panes}
         </ElTabs>
       </div>

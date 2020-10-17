@@ -1,6 +1,6 @@
 <template>
   <div id="menu">
-    <SMenu :menu="menus" :collapsed="collapsed"></SMenu>
+    <SMenu :menu="menus" :collapsible="collapsible"></SMenu>
   </div>
 </template>
 <script>
@@ -11,10 +11,10 @@ export default {
       type: Array,
       required: true
     },
-    collapsed: {
+    collapsible: {
       type: Boolean,
       required: true
-    }
+    },
   },
   name: "SideMenu",
   components: {
