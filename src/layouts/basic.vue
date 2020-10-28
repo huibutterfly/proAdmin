@@ -5,7 +5,7 @@
     </el-drawer>
     <SideMenu :menus="menus" :collapsible="true" v-else></SideMenu>
 
-    <div class="contentItem" :style="{ paddingLeft: contentPaddingLeft}">
+    <div class="contentItem" :style="{ paddingLeft: contentPaddingLeft }">
       <MenuHeader @toggle="setCollapsed"></MenuHeader>
       <div class="content">
         <menu-tab v-if="multiTab"></menu-tab>

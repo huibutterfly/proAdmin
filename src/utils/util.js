@@ -4,5 +4,4 @@ export function triggerWindowResizeEvent() {
   event.initEvent('resize', true, true)
   event.eventType = 'message'
   window.dispatchEvent(event)
-  console.log('111111111111')
 }

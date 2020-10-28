@@ -1,5 +1,11 @@
 <template>
-  <div style="height: 2000px">这是一个index哦哦哦哈哈哈</div>
+  <div style="height: 2000px">
+    <div class="desk">
+      <div>
+
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -14,3 +20,10 @@ export default {
   methods: {}
 };
 </script>
+<style lang="less" scoped>
+  .desk{
+    width: 25rem;
+    height: 25rem;
+    background-color: rgb(243, 217, 198);
+  }
+</style>

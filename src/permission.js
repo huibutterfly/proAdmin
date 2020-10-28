@@ -28,7 +28,6 @@ router.beforeEach((to, from, next) => {
             }).then(() => {
               router.options.routes = store.getters.addRouters;
               router.addRoutes(store.getters.addRouters)
-              // router.options.routes = store.getters.routers
               const redirect = decodeURIComponent(from.params.redirect || to.path)
               if (to.path === redirect) {
                 next({
@@ -47,7 +46,6 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else {
-    console.log(to)
     if (whiteList.includes(to.name)) {
       next()
     } else {
@@ -56,8 +54,4 @@ router.beforeEach((to, from, next) => {
       })
     }
   }
-})
-
-router.afterEach(() => {
-  console.log('22222222222')
 })

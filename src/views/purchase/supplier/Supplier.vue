@@ -4,7 +4,8 @@
       <div class="button-row">
         <el-button size="small" type="primary" icon="el-icon-search" @click="onSearch" :loading="isLoading" v-action:search>查询</el-button>
         <el-button size="small" type="primary" icon="el-icon-delete" @click="onClearQuery">清空</el-button>
-        <el-button size="small" type="primary" icon="el-icon-plus" @click="onAddDetail" v-action:new>新增</el-button>
+        <el-button size="small" type="primary" icon="el-icon-plus" @click="fileUploadDialogVisible = true" v-action:new>新增</el-button>
+        <file-upload type="image" :config="{multiple: true}"></file-upload>
       </div>
       <el-form label-position="top" size="mini">
           <el-row :gutter="15">
@@ -50,6 +51,8 @@
 
 <script>
 import { columns, supplier } from './config'
+import FileUpload from '@/components/Public/FileUpload'
+
 export default {
   data(){
     return{
@@ -61,7 +64,11 @@ export default {
       currentPage: 1,
       pageSize: 20,
       total: 0,
+      fileUploadDialogVisible: false
     }
+  },
+  components: {
+    FileUpload
   },
   created(){
     this.getSupplier()

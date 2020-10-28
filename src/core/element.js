@@ -19,7 +19,10 @@ import {
   Card,
   Table,
   TableColumn,
-  Pagination
+  Pagination,
+  Dialog,
+  Icon,
+  Progress
 } from 'element-ui'
 
 Vue.use(Col)
@@ -42,3 +45,6 @@ Vue.use(Card)
 Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(Pagination)
+Vue.use(Dialog)
+Vue.use(Icon)
+Vue.use(Progress)

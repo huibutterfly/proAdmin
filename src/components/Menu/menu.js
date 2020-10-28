@@ -2,6 +2,7 @@ import ElMenu from "element-ui/packages/menu";
 import ElMenuItem from "element-ui/packages/menu-item";
 import ELSubMenu from "element-ui/packages/submenu";
 import { mixin } from "@/utils/mixin";
+
 export default {
   name: "SideMenu",
   mixins: [mixin],
@@ -76,8 +77,7 @@ export default {
         </ELSubMenu>
       )
     },
-    handleSelect(key, keyPath){
-      console.log(keyPath)
+    handleSelect(key){
       this.selectedKeys = key
       this.$router.push({ path: this.selectedKeys })
     }
