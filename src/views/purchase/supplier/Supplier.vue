@@ -100,6 +100,8 @@ export default {
           key: item.id,
           in_service_text: { 1: '有效', 2: '无效' }[item.in_service]
         }))
+        // const opt = { data: this.data, columns: this.columns, filename: '导出.xlsx' }
+        // this.xlsxService.exportList(opt)
       } catch (error) {
         console.log(error)
       } finally {

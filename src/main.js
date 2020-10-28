@@ -14,11 +14,13 @@ import './core/user'
 import './global.less'
 import { Loading } from 'element-ui'
 import menuTab from '@/components/menuTab'
+import xlsxService from './utils/xlsxService'
 
 Vue.config.productionTip = false
 Vue.prototype.$request = request
 Vue.use(Loading.directive);
 Vue.prototype.$loading = Loading.service;
+Vue.prototype.xlsxService = xlsxService;
 
 
 
